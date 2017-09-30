@@ -12,3 +12,5 @@ wget https://raw.githubusercontent.com/rvdm/toon/master/Toon.py
 
 nano toonlog.py
 add your info to the file.
+
+python toonlog.py
