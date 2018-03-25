@@ -11,7 +11,7 @@ toonpassword = "YOURTOONPASSWORD"
 
 toon = Toon(toonusername, toonpassword)
 
-client = InfluxDBClient('address', port, 'user', 'password', 'database')
+client = InfluxDBClient('address', port, 'user', 'password', 'database', ssl=False)
 
 
 def save_data(sensor):
@@ -35,4 +35,9 @@ def save_data(sensor):
             # print(json_body) #for debug, not enabled
             client.write_points(json_body)
 
-save_data('toon')
+while True:
+    try:
+        save_data('toon')
+        time.sleep(60)
+    except KeyboardInterrupt:
+        sys.exit()
