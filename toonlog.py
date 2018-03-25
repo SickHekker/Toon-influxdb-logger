@@ -41,3 +41,6 @@ while True:
         time.sleep(60)
     except KeyboardInterrupt:
         sys.exit()
+    except KeyError:
+         continue
+
