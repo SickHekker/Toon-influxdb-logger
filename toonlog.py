@@ -11,8 +11,8 @@ toonpassword = "YOURTOONPASSWORD"
 
 toon = Toon(toonusername, toonpassword)
 
+# Don't forget to set ssl to True if that is enabled on the server.
 client = InfluxDBClient('address', port, 'user', 'password', 'database', ssl=False)
-
 
 def save_data(sensor):
     toon.login()
@@ -43,4 +43,3 @@ while True:
         sys.exit()
     except KeyError:
          continue
-
